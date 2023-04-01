@@ -88,25 +88,16 @@ namespace StreamlinkTwitchLoader {
                 process.StartInfo.CreateNoWindow = true;
 
                 process.StartInfo.FileName = "streamlink.exe";
-                
-                process.StartInfo.ArgumentList.Add("--twitch-disable-hosting");
-                
+
                 process.StartInfo.ArgumentList.Add("--twitch-disable-ads");
+
+                process.StartInfo.ArgumentList.Add("--twitch-low-latency");
 
                 process.StartInfo.ArgumentList.Add("--player");
                 process.StartInfo.ArgumentList.Add("C:\\Program Files\\VideoLAN\\VLC\\vlc.exe");
 
                 process.StartInfo.ArgumentList.Add("--player-args");
                 process.StartInfo.ArgumentList.Add($"--no-one-instance --play-and-exit --input-title-format \"Player {id}\" --qt-minimal-view --no-audio");
-
-                process.StartInfo.ArgumentList.Add("--hls-live-edge");
-                process.StartInfo.ArgumentList.Add("3");
-
-                process.StartInfo.ArgumentList.Add("--hls-segment-threads");
-                process.StartInfo.ArgumentList.Add("1");
-
-                process.StartInfo.ArgumentList.Add("--retry-open");
-                process.StartInfo.ArgumentList.Add("1");
 
                 process.StartInfo.ArgumentList.Add("--retry-max");
                 process.StartInfo.ArgumentList.Add("5");
